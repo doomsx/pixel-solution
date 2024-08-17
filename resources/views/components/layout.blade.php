@@ -26,7 +26,7 @@
                 </div>
             </nav>
 
-            <main class="max-w-[986px]">
+            <main class="max-w-[986px] mx-auto mt-10">
                 {{$slot}}
             </main>
         </div>
