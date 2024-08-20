@@ -11,9 +11,9 @@
         <section class="pt-10">
             <x-section-heading>Featured Jobs</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-3 mt-4">
-                <x-job-card></x-job-card>
-                <x-job-card></x-job-card>
-                <x-job-card></x-job-card>
+                @foreach ($jobs as $job)
+                    <x-job-card :job=$job />
+                @endforeach
             </div>
         </section>
 
@@ -21,14 +21,9 @@
             <x-section-heading>Tags</x-section-heading>
 
             <div class="flex gap-2 flex-wrap mt-4">
-                <x-job-tags size="base">Front End</x-job-tags>
-                <x-job-tags>Back End</x-job-tags>
-                <x-job-tags>UI/UX</x-job-tags>
-                <x-job-tags>Full Stack</x-job-tags>
-                <x-job-tags>Project Manager</x-job-tags>
-                <x-job-tags>QA Tester</x-job-tags>
-                <x-job-tags>Penetration Tester</x-job-tags>
-                <x-job-tags>Network Engineer</x-job-tags>
+                @foreach ($tags as $tag)
+                    <x-job-tags :$tag />
+                @endforeach
             </div>
         </section>
 
@@ -36,10 +31,11 @@
             <x-section-heading>Recent Jobs</x-section-heading>
 
             <div class="mt-4 space-y-4">
-                <x-job-card-expanded></x-job-card-expanded>
-                <x-job-card-expanded></x-job-card-expanded>
-                <x-job-card-expanded></x-job-card-expanded>
+                @foreach ($jobs as $job)
+                    <x-job-card-expanded :job=$job/>
+                @endforeach
             </div>
         </section>
     </div>
 </x-layout>
+
