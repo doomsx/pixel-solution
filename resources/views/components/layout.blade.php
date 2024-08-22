@@ -7,7 +7,7 @@
         <link href="css/style.css" rel="stylesheet">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-[#060606] text-white">
+    <body class="bg-[#060606] text-white pb-20">
         <div class="px-10 py-4 ">
             <nav class="flex flex-row gap-2 justify-between items-center border-b border-white/20 py-4">
                 <div>
@@ -21,9 +21,19 @@
                     <x-nav-link href="/">Salaries</x-nav-link>
                     <x-nav-link href="/">Companies</x-nav-link>
                 </div>
-                <div>
-                    <x-nav-link href="/">Post a Job</x-nav-link>
-                </div>
+
+                @auth
+                    <div>
+                        <x-nav-link href="/jobs/create">Post a Job</x-nav-link>
+                    </div>
+                @endauth
+
+                @guest
+                    <div class="space-x-3">
+                        <x-nav-link href="/register">Sign Up</x-nav-link>
+                        <x-nav-link href="/login">Log In</x-nav-link>
+                    </div>
+                @endguest
             </nav>
 
             <main class="max-w-[986px] mx-auto mt-10">
