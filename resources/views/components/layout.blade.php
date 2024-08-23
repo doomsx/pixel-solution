@@ -23,13 +23,18 @@
                 </div>
 
                 @auth
-                    <div>
+                    <div class="flex items-center space-x-2">
                         <x-nav-link href="/jobs/create">Post a Job</x-nav-link>
+                        <form method="POST" action="/logout">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Logout</button>
+                        </form>
                     </div>
                 @endauth
 
                 @guest
-                    <div class="space-x-3">
+                    <div class="space-x-2">
                         <x-nav-link href="/register">Sign Up</x-nav-link>
                         <x-nav-link href="/login">Log In</x-nav-link>
                     </div>

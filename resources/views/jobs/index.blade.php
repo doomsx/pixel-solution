@@ -3,10 +3,6 @@
         <section class="text-center">
             <h2 class="text-3xl font-bold">Let's Find You A Great Job</h2>
 
-            <!-- <form action="" class="mt-8"> -->
-            <!--     <input type="text" name="" value="" placeholder="Web Developer..." class="rounded-2xl bg-white/5 px-6 py-3 w-full max-w-2xl border border-white/10"> -->
-            <!-- </form> -->
-
             <x-forms.form action="/search" class="mt-6">
                     <x-forms.input :label="false" name="q" type="text" placeholder="Web Developer"/>
             </x-forms.form>
